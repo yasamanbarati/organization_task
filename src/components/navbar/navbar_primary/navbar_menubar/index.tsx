@@ -16,11 +16,19 @@ export const NavbarMenuBar = () => {
   }
   return <>
     <IconButton
-      color="default"
       aria-label="open drawer"
       edge="end"
       onClick={handleDrawerOpen}
-      sx={{ ...(open && { display: 'flex' }) }}
+      sx={{
+        ...(open && { display: 'flex' }),
+        right: "0",
+        position: 'absolute',
+        top: '15px',
+        MinHeight: "65px",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        color: "#fff"
+      }}
     >
       <MenuIcon />
     </IconButton>
