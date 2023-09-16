@@ -23,8 +23,8 @@ const theme = createTheme({
     body1: {
       fontSize: '0.875rem',//14px
       fontWeight: '500',
-      lineHeight: '19px',
-      letterSpacing: '0'
+      lineHeight: '25px',
+      letterSpacing: '1'
     },
     body2: {
       fontSize: '0.75rem',//12px

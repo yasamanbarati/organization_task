@@ -37,14 +37,17 @@
 * {
   box-sizing: border-box;
   font-family: "Vazir"!important;
+  direction: rtl;
 }
 
 html,
 body {
+  overflow-x: hidden;
+}
+#__next{
   width: 425px;
   height: 100vh;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 a {
   color: inherit;
