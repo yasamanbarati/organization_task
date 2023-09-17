@@ -3,7 +3,7 @@ import { TabsSection } from "@/components/pages/tabs";
 
 export default function Home() {
   return <>
-    <NavbarPrimarySection />
-    {/* <TabsSection /> */}
+    <NavbarPrimarySection Mode={true} />
+    <TabsSection />
   </>
 }
