@@ -3,6 +3,7 @@ import { IconButton } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 
 import { MenuBar } from "./menu_bar";
+import { padding } from "@mui/system";
 
 export const NavbarMenuBar = () => {
   const [open, setOpen] = useState(false)
@@ -22,12 +23,13 @@ export const NavbarMenuBar = () => {
       sx={{
         ...(open && { display: 'flex' }),
         right: "0",
-        position: 'absolute',
-        top: '15px',
+        position: 'relative',
         MinHeight: "65px",
         justifyContent: "flex-end",
         alignItems: "center",
-        color: "#fff"
+        color: "#fff",
+        marginRight: '0',
+        padding: '0',
       }}
     >
       <MenuIcon />

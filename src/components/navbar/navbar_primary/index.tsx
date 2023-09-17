@@ -1,8 +1,7 @@
-import { AppBar, Avatar, Box, styled, Toolbar, Typography } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search';
-import { NavbarMenuBar } from './navbar_menubar';
 import Link from 'next/link';
-import { NavigateNext } from '@mui/icons-material';
+import { AppBar, Avatar, Box, styled, Toolbar, Typography } from '@mui/material'
+import { NavigateNext, Search } from '@mui/icons-material';
+import { NavbarMenuBar } from './navbar_menubar';
 
 interface NavbarProps {
   Mode: boolean
@@ -18,7 +17,7 @@ const HeaderBox = styled(Box)(({ theme }) => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    marginLeft: '15px',
+    marginLeft: '5px',
   }
 }))
 const AppBarBox = styled(AppBar)(({ theme }) => ({
@@ -32,7 +31,7 @@ const ToolbarBox = styled(Toolbar)(() => ({
   justifyContent: 'space-between',
   flexDirection: 'row-reverse',
   alignItems: 'center',
-  margin: '0 18px',
+  margin: '4px 18px',
   padding: '0!important',
 }))
 
@@ -41,21 +40,21 @@ export const NavbarPrimarySection = ({ Mode }: NavbarProps) => {
     <AppBarBox>
       <ToolbarBox>
 
-        <SearchIcon sx={{ fontSize: '2rem' }} />
+        <Search sx={{ fontSize: '1.7rem' }} />
         {Mode === true ?
           <>
-            <Typography variant='h1' mx='auto'>پیام های سازمان</Typography>
+            <Typography variant='h2' mx='auto'>پیام های سازمان</Typography>
             <NavbarMenuBar />
           </>
           : <HeaderBox>
-            <Typography variant='h2' mx='auto' marginRight={2}>کانال سراسری</Typography>
+            <Typography variant='h3' mx='auto' marginRight={1}>کانال سراسری</Typography>
             <Avatar
               alt="chanle image"
               src="https://reqres.in/img/faces/1-image.jpg"
               sx={{ width: 45, height: 45 }}
             />
             <Link href="/">
-              <NavigateNext fontSize='large' />
+              <NavigateNext sx={{ fontSize: '1.7rem' }} />
             </Link>
           </HeaderBox>
         }

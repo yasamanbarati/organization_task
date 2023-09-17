@@ -11,14 +11,17 @@ interface HeaderCardProps {
 const CardHeaderBox = styled(CardHeader)(({ theme }) => ({
   padding: '0',
   alignItems: "center",
+  width: '100%',
   height: "65px",
   justifyContent: "space-between",
   "& .MuiCardHeader-avatar": {
     marginLeft: '10px',
     marginRight: '0px',
+    maxWidth: '60px',
+    maxHeight: '60px',
     "& .MuiAvatar-root ": {
-      width: '60px',
-      height: '60px',
+      width: '50px',
+      height: '50px',
     },
   },
   "& .MuiCardHeader-content ": {
@@ -26,25 +29,26 @@ const CardHeaderBox = styled(CardHeader)(({ theme }) => ({
     flexDirection: 'column',
     flexWrap: 'nowrap',
     justifyContent: 'space-around',
-    maxWidth: '280px',
+    width: '220px',
     height: '100%',
   },
   "& .MuiCardHeader-title ": {
-    fontSize: '1rem',
+    fontSize: '0.875rem',
     fontWeight: '600',
     color: theme.palette.white,
   },
   "& .MuiCardHeader-subheader ": {
-    fontSize: '0.85rem',
+    fontSize: '0.75rem',
     fontWeight: '500',
     color: theme.palette.white,
-    width: '99%',
+    width: '95%',
     textOverflow: 'ellipsis',
     overflow: "hidden",
     whiteSpace: "nowrap"
   },
   "& .MuiCardHeader-action ": {
-    width: '40px',
+    maxWidth: '50px',
+    width: '30px',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',

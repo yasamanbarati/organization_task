@@ -3,8 +3,8 @@ import { Avatar, Card, CardActions, CardContent, CardHeader, Checkbox, IconButto
 
 const CardBox = styled(Card)(({ theme }) => ({
   background: theme.palette.violet.dark,
-  minWidth: '320px',
-  width: '380px',
+  width: '100%',
+  height: 'auto',
   marginTop: '24px',
   padding: '16px 16px 0 16px',
   "& .MuiCardHeader-avatar": {
