@@ -1,5 +1,5 @@
 import { HeaderCard } from "@/components/card/header_card";
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import Link from "next/link";
 
 interface TabPanelProps {
@@ -11,28 +11,34 @@ interface TabPanelProps {
     messageCount: number
 }
 
+const LinkBox = styled(Link)(() => ({
+    marginTop: "24px",
+    padding: '0 12px',
+    width: "100%",
+    maxWidth: "400px",
+    display: 'block'
+}))
+
 export const TabsPanel = ({ value, index, avatar, subheader, title, messageCount }: TabPanelProps) => {
 
+    const exploreLink = `/chat/${value}`
+
     return (
-        <div
+        <LinkBox
+            href={exploreLink}
             role="tabpanel"
             hidden={value !== index}
             id={`vertical-tabpanel-${index}`}
             aria-labelledby={`vertical-tab-${index}`}
-            style={{ marginTop: "24px" }}
         >
             {value === index && (
-                <Link href="/[slug]" as={`/${value}`}>
-                    <Box sx={{ m: 2 }}>
-                        <HeaderCard
-                            key={value}
-                            avatar={avatar}
-                            title={title}
-                            subheader={subheader}
-                            messageCount={messageCount} />
-                    </Box>
-                </Link>
+                <HeaderCard
+                    key={value}
+                    avatar={avatar}
+                    title={title}
+                    subheader={subheader}
+                    messageCount={messageCount} />
             )}
-        </div >
+        </LinkBox >
     );
 }
