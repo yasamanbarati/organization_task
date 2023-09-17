@@ -7,6 +7,8 @@ interface AddMessageProps {
 }
 
 const FormBox = styled(Paper)(({ theme }) => ({
+    position: "absolute",
+    bottom: 0,
     height: '65px',
     background: theme.palette.violet.dark,
     display: 'flex',
@@ -17,12 +19,12 @@ const FormBox = styled(Paper)(({ theme }) => ({
     "& .MuiButtonBase-root": {
         color: theme.palette.white,
         "& .MuiSvgIcon-root": {
-            fontSize: '1.6rem',
+            fontSize: '1.4rem',
         }
     }
 }))
 const InputBaseBox = styled(InputBase)(({ theme }) => ({
-    background: '#40416a',
+    background: theme.palette.brightestViolet,
     padding: '6px 12px',
     borderRadius: '6px',
     "& input": {
