@@ -3,6 +3,7 @@ import { IconButton } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 
 import { MenuBar } from "./menu_bar";
+import { padding } from "@mui/system";
 
 export const NavbarMenuBar = () => {
   const [open, setOpen] = useState(false)
@@ -16,11 +17,20 @@ export const NavbarMenuBar = () => {
   }
   return <>
     <IconButton
-      color="default"
       aria-label="open drawer"
       edge="end"
       onClick={handleDrawerOpen}
-      sx={{ ...(open && { display: 'flex' }) }}
+      sx={{
+        ...(open && { display: 'flex' }),
+        right: "0",
+        position: 'relative',
+        MinHeight: "65px",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        color: "#fff",
+        marginRight: '0',
+        padding: '0',
+      }}
     >
       <MenuIcon />
     </IconButton>
