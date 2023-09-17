@@ -9,6 +9,7 @@ export const palette = {
     light: "#4d00ca",
     dark: "#03122c",
   },
+  brightestViolet: "#40416a",
   white: "#fff",
   dark: "#000",
   red: "#cc0000",
@@ -20,6 +21,7 @@ declare module "@mui/material/styles" {
     white: string;
     dark: string;
     red: string;
+    brightestViolet: string;
   }
   interface PaletteOptions {
     yellow?: PaletteOptions["primary"];
@@ -27,6 +29,7 @@ declare module "@mui/material/styles" {
     white?: string;
     dark?: string;
     red: string;
+    brightestViolet: string;
   }
 }
 declare module "@mui/material/Button" {

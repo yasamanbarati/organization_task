@@ -42,12 +42,16 @@
 
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100%;
 }
 #__next{
-  width: 425px;
-  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
   margin: 0 auto;
+  background: #03122c;
 }
 a {
   color: inherit;

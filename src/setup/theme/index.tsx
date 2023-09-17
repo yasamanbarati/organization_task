@@ -4,12 +4,6 @@ import { palette } from './palette';
 const theme = createTheme({
   palette: palette,
   typography: {
-    h1: {
-      fontSize: '1.25rem',//20px
-      fontWeight: '800',
-      lineHeight: '25px',
-      letterSpacing: '0'
-    },
     h2: {
       fontSize: '1.125rem',//18px
       fontWeight: '700',
