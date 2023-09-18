@@ -1,8 +1,9 @@
 import { ExpandMoreOutlined } from "@mui/icons-material"
 import { IconButton, styled } from "@mui/material"
+import { MutableRefObject } from "react"
 
 const ScrollButtonBox = styled(IconButton)(({ theme }) => ({
-    position: "fixed",
+    position: "absolute",
     width: "45px",
     height: "45px",
     background: theme.palette.brightestViolet,
@@ -18,13 +19,19 @@ const ScrollButtonBox = styled(IconButton)(({ theme }) => ({
     },
 }))
 
-export const ScrollButton = () => {
+interface Props {
+    useRef: MutableRefObject<any>
+}
+
+export const ScrollButton = ({ useRef }: Props) => {
 
     const scrollToDown = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
+
+        console.log(useRef.current);
+        useRef?.current?.scrollTo(
+            0, useRef.current.scrollHeight
+
+        )
     }
 
     return (
