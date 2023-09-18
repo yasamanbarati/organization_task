@@ -57,14 +57,6 @@ export const TabsSection = () => {
       title="کانال سراسری"
       messageCount={3}
     />
-    {/* <TabsPanel
-      value={value}
-      index={value}
-      avatar="https://reqres.in/img/faces/1-image.jpg"
-      subheader="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ"
-      title="کانال سراسری"
-      messageCount={3}
-    /> */}
   </>
 }
 
