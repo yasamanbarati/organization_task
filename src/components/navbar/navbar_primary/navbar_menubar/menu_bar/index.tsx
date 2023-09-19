@@ -1,5 +1,6 @@
-import { Drawer, styled, IconButton, useTheme } from '@mui/material'
+import { Drawer, styled, IconButton, useTheme, Avatar, Box, Typography } from '@mui/material'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { stringAvatar } from '@/helper/avatarStringMaker';
 
 interface Props {
     handleDrawerClose: () => void
@@ -9,11 +10,17 @@ interface Props {
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1),
+    justifyContent: 'space-between',
+    flexDirection: 'row-reverse',
+    padding: '12px',
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-start',
     "& .MuiSvgIcon-root": {
         color: theme.palette.violet.dark
+    },
+    "& .MuiBox-root": {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: "column",
     }
 }));
 const DrawerStyle = {
@@ -24,15 +31,16 @@ const DrawerStyle = {
     top: '-65px',
     '& .MuiDrawer-paper': {
         width: "269px",
-        height: "calc( 100vh - 65px )",
+        height: "100vh",
         right: "-24px",
-        top: "65px",
+        top: "60px",
         paddingRight: "40px",
         background: "rgba(255, 255, 255, 0.6)",
         backdropFilter: "blur(16px)",
         position: "absolute"
     },
 }
+
 export const MenuBar = ({ handleDrawerClose, open }: Props) => {
     const theme = useTheme()
     return (
@@ -42,12 +50,20 @@ export const MenuBar = ({ handleDrawerClose, open }: Props) => {
             anchor="right"
             open={open}
         >
-            <DrawerHeader sx={{ justifyContent: "flex-start" }}>
+            <DrawerHeader>
                 <IconButton onClick={handleDrawerClose}>
                     <ChevronLeftIcon sx={{ fontSize: "2.5rem" }} />
                 </IconButton>
-            </DrawerHeader>
 
+                <Box>
+                    <Avatar {...stringAvatar('Yasaman Barati')} />
+                    <Typography variant='h3' color='white' component='h3' mt={1}>Yasaman Barati</Typography>
+                </Box>
+
+            </DrawerHeader>
+            <Box>
+
+            </Box>
         </Drawer>
     )
 }
