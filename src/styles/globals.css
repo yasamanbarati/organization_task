@@ -52,6 +52,7 @@ body {
   height: 100%;
   margin: 0 auto;
   background: #03122c;
+  position: relative;
 }
 a {
   color: inherit;

@@ -1,6 +1,6 @@
+import { MutableRefObject, useCallback, useEffect, useState } from "react"
 import { ExpandMoreOutlined } from "@mui/icons-material"
 import { IconButton, styled } from "@mui/material"
-import { MutableRefObject } from "react"
 
 const ScrollButtonBox = styled(IconButton)(({ theme }) => ({
     position: "absolute",
@@ -25,17 +25,29 @@ interface Props {
 
 export const ScrollButton = ({ useRef }: Props) => {
 
-    const scrollToDown = () => {
+    const [showBtn, setShowBtn] = useState<boolean>(true)
 
-        console.log(useRef.current);
+    const handleScroll = useCallback(() => {
+        setShowBtn(true)
+    }, [])
+
+    useEffect(() => {
+        useRef.current.addEventListener("scroll", handleScroll)
+    })
+
+    const scrollToDown = () => {
+        setShowBtn(false)
         useRef?.current?.scrollTo(
             0, useRef.current.scrollHeight
-
         )
     }
 
     return (
-        <ScrollButtonBox aria-label="Down" size="large" onClick={scrollToDown} >
+        <ScrollButtonBox
+            aria-label="Down"
+            size="large"
+            sx={showBtn === true ? { opacity: "1" } : { opacity: '0' }}
+            onClick={scrollToDown}  >
             <ExpandMoreOutlined />
         </ScrollButtonBox>
     )
