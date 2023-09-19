@@ -1,3 +1,4 @@
+import { stringAvatar } from "@/helper/avatarStringMaker"
 import { timeDateFormatter } from "@/helper/time"
 import { messageProps } from "@/services/type"
 import {
@@ -73,7 +74,7 @@ export const MessageCard = ({
     <CardBox>
       <CardHeader
         sx={{ padding: "0" }}
-        avatar={<Avatar aria-label="recipe">ا ن</Avatar>}
+        avatar={<Avatar {...stringAvatar('امین نیک نام')} />}
         action={
           <IconButton aria-label="settings">
             <MoreVert />
